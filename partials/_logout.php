@@ -9,5 +9,5 @@ unset($_SESSION["userId"]);
 // session_unset();
 // session_destroy();
 
-header("location: /FoodEsy/index.php");
+header("location: /index.php");
 ?>
