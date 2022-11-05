@@ -155,7 +155,7 @@
                 <div class="user-info">
                     <img class="rounded-circle mb-3 bg-dark" src="img/person-<?php echo $userId; ?>.jpg" onError="this.src = 'img/profilePic.jpg'" style="width:215px;height:215px;padding:1px;">
                     <form action="partials/_manageProfile.php" method="POST">
-                        <small>Remove Image: </small><button type="submit" class="btn btn-primary" name="removeProfilePic" style="font-size: 12px;padding: 3px 8px;border-radius: 9px;">remove</button>
+                        <small>Remove Image: </small><button type="submit" class="btn btn-primary" name="removeProfilePic" style="font-size: 12px;padding: 3px 8px;border-radius: 9px;">Remove</button>
                     </form> 
                     <form action="partials/_manageProfile.php" method="POST" enctype="multipart/form-data" style="margin-top: 7px;">
                         <div class="upload-btn-wrapper">
