@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $numExistRows = mysqli_num_rows($result);
     if($numExistRows > 0){
         $showError = "Username Already Exists";
-        header("Location: /FoodEsy/index.php?signupsuccess=false&error=$showError");
+        header("Location: /index.php?signupsuccess=false&error=$showError");
     }
     else{
       if(($password == $cpassword)){
@@ -25,12 +25,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           $result = mysqli_query($conn, $sql);
           if ($result){
               $showAlert = true;
-              header("Location: /FoodEsy/index.php?signupsuccess=true");
+              header("Location: /index.php?signupsuccess=true");
           }
       }
       else{
           $showError = "Passwords do not match";
-          header("Location: /FoodEsy/index.php?signupsuccess=false&error=$showError");
+          header("Location: /index.php?signupsuccess=false&error=$showError");
       }
     }
 }
