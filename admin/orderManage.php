@@ -28,7 +28,10 @@
             </thead>
             <tbody>
                 <?php
-                    $sql = "SELECT * FROM `orders` ORDER BY takeAwayTime";
+                    $dt = date("Y-m-d");
+                    $dt1 = $dt. " 00: 00: 00";
+                    $dt2 = $dt. " 23: 59: 59";
+                    $sql = "SELECT * FROM `orders` WHERE orderDate BETWEEN '$dt1' AND '$dt2' && orderStatus<4 ORDER BY takeAwayTime";
                     $result = mysqli_query($conn, $sql);
                     $counter = 0;
                     while($row = mysqli_fetch_assoc($result)){
@@ -62,7 +65,7 @@
                             </tr>';
                     }
                     if($counter==0) {
-                        ?><script> document.getElementById("NoOrder").innerHTML = '<div class="alert alert-info alert-dismissible fade show" role="alert" style="width:100%"> You have not Recieve any Order!!	</div>';</script> <?php
+                        ?><script> document.getElementById("NoOrder").innerHTML = '<div class="alert alert-info alert-dismissible fade show" role="alert" style="width:100%"> No Orders Yet :( </div>';</script> <?php
                     } 
                 ?>
             </tbody>

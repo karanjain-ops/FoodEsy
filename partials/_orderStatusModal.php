@@ -148,9 +148,6 @@
                 $deliveryTime = 'xx';
         }
         else {
-            $trackId = 'xxxxx';
-            $deliveryBoyName = '';
-            $deliveryBoyPhoneNo = '';
             $deliveryTime = 'xx';
         }
 

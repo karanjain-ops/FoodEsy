@@ -44,38 +44,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $amount = $_POST["amount"];   
         $takeAwayTime = $_POST["takeAwayTime"];
         $phone = $_POST["phone"];
-        $password = $_POST["password"];
-        $passSql = "SELECT * FROM users WHERE id='$userId'"; 
-        $passResult = mysqli_query($conn, $passSql);
-        $passRow=mysqli_fetch_assoc($passResult);
-        $userName = $passRow['username'];
-        if (password_verify($password, $passRow['password'])){ 
-            $sql = "INSERT INTO `orders` (`userId`, takeAwayTime, `phoneNo`, `amount`, `paymentMode`, `orderStatus`, `orderDate`) VALUES ('$userId', '$takeAwayTime', '$phone', '$amount', '0', '0', current_timestamp())";
-            $result = mysqli_query($conn, $sql);
-            $orderId = $conn->insert_id;
-            if ($result){
-                $addSql = "SELECT * FROM `viewcart` WHERE userId='$userId'"; 
-                $addResult = mysqli_query($conn, $addSql);
-                while($addrow = mysqli_fetch_assoc($addResult)){
-                    $foodId = $addrow['foodId'];
-                    $itemQuantity = $addrow['itemQuantity'];
-                    $itemSql = "INSERT INTO `orderitems` (`orderId`, `foodId`, `itemQuantity`) VALUES ('$orderId', '$foodId', '$itemQuantity')";
-                    $itemResult = mysqli_query($conn, $itemSql);
-                }
-                $deletesql = "DELETE FROM `viewcart` WHERE `userId`='$userId'";   
-                $deleteresult = mysqli_query($conn, $deletesql);
-                echo '<script>alert("Thanks for ordering with us. Your order id is ' .$orderId. '.");
-                    window.location.href="http://localhost/FoodEsy/index.php";  
-                    </script>';
-                    exit();
+        $sql = "INSERT INTO `orders` (`userId`, takeAwayTime, `phoneNo`, `amount`, `paymentMode`, `orderStatus`, `orderDate`) VALUES ('$userId', '$takeAwayTime', '$phone', '$amount', '0', '0', current_timestamp())";
+        $result = mysqli_query($conn, $sql);
+        $orderId = $conn->insert_id;
+        if ($result){
+            $addSql = "SELECT * FROM `viewcart` WHERE userId='$userId'"; 
+            $addResult = mysqli_query($conn, $addSql);
+            while($addrow = mysqli_fetch_assoc($addResult)){
+                $foodId = $addrow['foodId'];
+                $itemQuantity = $addrow['itemQuantity'];
+                $itemSql = "INSERT INTO `orderitems` (`orderId`, `foodId`, `itemQuantity`) VALUES ('$orderId', '$foodId', '$itemQuantity')";
+                $itemResult = mysqli_query($conn, $itemSql);
             }
-        } 
-        else{
-            echo '<script>alert("Incorrect Password!! Please enter correct Password.");
-                    window.history.back(1);
-                    </script>';
-                    exit();
-        }    
+            $deletesql = "DELETE FROM `viewcart` WHERE `userId`='$userId'";   
+            $deleteresult = mysqli_query($conn, $deletesql);
+            echo '<script>alert("Thanks for ordering with us. Your order id is ' .$orderId. '.");
+                window.location.href="http://localhost/FoodEsy/index.php";  
+                </script>';
+                exit();
+        }   
     }
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
     {

@@ -23,10 +23,15 @@
             <div class="text-left my-2">    
                 <b><label for="name">Order Status</label></b>
                 <div class="row mx-2">
-                <input class="form-control col-md-3" id="status" name="status" value="<?php echo $orderStatus; ?>" type="number" min="0" max="6" required>    
-                <button type="button" class="btn btn-secondary ml-1" data-container="body" data-toggle="popover" title="User Types" data-placement="bottom" data-html="true" data-content="0=Order Placed.<br> 1=Order Confirmed.<br> 2=Preparing your Order.<br> 3=Order Ready for Pickup.<br> 4=Order Collected.<br> 5=Order Denied.<br> 6=Order Cancelled.">
-                    <i class="fas fa-info"></i>
-                </button>
+                <select class="form-control col-md-6" id="status" name="status" required>
+                    <option value=0 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Placed</option>
+                    <option value=1 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Confirmed</option>
+                    <option value=2 <?php echo (0==$orderStatus)?"selected":""; ?>>Preparing Order</option>
+                    <option value=3 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Ready for Pickup</option>
+                    <option value=4 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Collected</option>
+                    <option value=5 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Denied</option>
+                    <option value=5 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Cancelled</option>
+                </select>
                 </div>
             </div>
             <input type="hidden" id="orderId" name="orderId" value="<?php echo $orderid; ?>">

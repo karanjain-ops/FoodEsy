@@ -1,3 +1,10 @@
+<?php include 'partials/_dbconnect.php';?>
+<?php
+$sql = "SELECT * FROM `sitedetail`";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$systemName = $row['systemName']; 
+?>   
     <header class="header" id="header">
         <div class="header__toggle">
             <i class='bx bx-menu' id="header-toggle"></i>
@@ -13,7 +20,7 @@
             <div>
                 <a href="index.php" class="nav__logo">
                     <i class='bx bx-layer nav__logo-icon'></i>
-                    <span class="nav__logo-name">Food Delivery</span>
+                    <span class="nav__logo-name"><?php echo $systemName;?></span>
                 </a>
 
                 <div class="nav__list">
