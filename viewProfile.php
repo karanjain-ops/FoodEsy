@@ -160,7 +160,7 @@
                     <form action="partials/_manageProfile.php" method="POST" enctype="multipart/form-data" style="margin-top: 7px;">
                         <div class="upload-btn-wrapper">
                             <small>Change Image:</small>
-                            <button class="btn upload">choose</button>
+                            <button class="btn upload">Choose</button>
                             <input type="file" name="image" id="image" accept="image/*">
                         </div>
                         <button type="submit" name="updateProfilePic" class="btn btn-primary" style="margin-top: -20px;font-size: 15px;padding: 3px 8px;">Update</button>
