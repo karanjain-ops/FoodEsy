@@ -34,7 +34,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: 
             $sql = "SELECT categorieName, categorieId FROM `categories`"; 
             $result = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($result)){
-              echo '<a class="dropdown-item" href="../viewFoodList.php?catid=' .$row['categorieId']. '">' .$row['categorieName']. '</a>';
+              echo '<a class="dropdown-item" href="viewFoodList.php?catid=' .$row['categorieId']. '">' .$row['categorieName']. '</a>';
             }
             echo '</div>
           </li>
@@ -49,7 +49,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: 
           </li>
           
         </ul>
-        <form method="get" action="../search.php" class="form-inline my-2 my-lg-0 mx-3">
+        <form method="get" action="/FoodEsy/search.php" class="form-inline my-2 my-lg-0 mx-3">
           <input class="form-control mr-sm-2" type="search" name="search" id="search" placeholder="Search" aria-label="Search" required>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>';
@@ -61,7 +61,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: 
         if(!$count) {
           $count = 0;
         }
-        echo '<a href="../viewCart.php"><button type="button" class="btn btn-secondary mx-2" title="MyCart">
+        echo '<a href="viewCart.php"><button type="button" class="btn btn-secondary mx-2" title="MyCart">
           <svg xmlns="img/cart.svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
           </svg>  
@@ -73,7 +73,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">' .$username. '</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="../partials/_logout.php">Logout</a>
+                <a class="dropdown-item" href="partials/_logout.php">Logout</a>
               </div>
             </li>
           </ul>
