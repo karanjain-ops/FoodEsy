@@ -25,12 +25,12 @@
                 <div class="row mx-2">
                 <select class="form-control col-md-6" id="status" name="status" required>
                     <option value=0 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Placed</option>
-                    <option value=1 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Confirmed</option>
-                    <option value=2 <?php echo (0==$orderStatus)?"selected":""; ?>>Preparing Order</option>
-                    <option value=3 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Ready for Pickup</option>
-                    <option value=4 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Collected</option>
-                    <option value=5 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Denied</option>
-                    <option value=5 <?php echo (0==$orderStatus)?"selected":""; ?>>Order Cancelled</option>
+                    <option value=1 <?php echo (1==$orderStatus)?"selected":""; ?>>Order Confirmed</option>
+                    <option value=2 <?php echo (2==$orderStatus)?"selected":""; ?>>Preparing Order</option>
+                    <option value=3 <?php echo (3==$orderStatus)?"selected":""; ?>>Order Ready for Pickup</option>
+                    <option value=4 <?php echo (4==$orderStatus)?"selected":""; ?>>Order Collected</option>
+                    <option value=5 <?php echo (5==$orderStatus)?"selected":""; ?>>Order Denied</option>
+                    <option value=6 <?php echo (6==$orderStatus)?"selected":""; ?>>Order Cancelled</option>
                 </select>
                 </div>
             </div>
