@@ -12,8 +12,8 @@
     <link rel = "icon" href ="img/logo.jpg" type = "image/x-icon">
   </head>
 <body>
-  <?php include 'partials/_dbconnect.php';?>
-  <?php require 'partials/_nav.php' ;?>
+  <?php include '../partials/_dbconnect.php';?>
+  <?php require '../partials/_nav.php' ;?>
   
   <!-- Category container starts here -->
   <div class="container my-3 mb-5">
