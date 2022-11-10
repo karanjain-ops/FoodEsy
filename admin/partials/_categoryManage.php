@@ -80,7 +80,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $newName = 'card-'.$catId;
             $newfilename=$newName .".jpg";
 
-            $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/OnlinePizzaDelivery/img/';
+            $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/FoodEsy/img/';
             $uploadfile = $uploaddir . $newfilename;
 
             if (move_uploaded_file($_FILES['catimage']['tmp_name'], $uploadfile)) {
