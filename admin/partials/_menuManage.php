@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             window.location=document.referrer;
                         </script>";
                 } else {
-                    echo "<script>alert('Failed!!'".$filename.");
+                    echo "<script>alert('Failed!!');
                             window.location=document.referrer;
                         </script>";
                 }
